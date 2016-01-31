@@ -6,68 +6,44 @@ class MainScene: CCNode {
     var healthStore: HKHealthStore?
     var heartRateUnit: HKUnit?
     
+    weak var backgroundNode : CCNode!
+    
+    weak var background1 : CCSprite!
+    weak var background2 : CCSprite!
+    var backgrounds = [CCSprite]()  // initializes an empty array
+    
+
     func didLoadFromCCB() {
+        userInteractionEnabled = true
+        backgrounds.append(background1)
+        backgrounds.append(background2)
         
-        if HKHealthStore.isHealthDataAvailable() {
-            print("hello")
-            healthStore = HKHealthStore()
-            healthStore?.requestAuthorizationToShareTypes([HKObjectType.quantityTypeForIdentifier("HKQuantityTypeIdentifierHeartRate")!], readTypes:[HKObjectType.quantityTypeForIdentifier("HKQuantityTypeIdentifierHeartRate")!], completion: { success, error in
-                if success {
-                    print("success")
-                }
-                else {
-                    print("noo")
-                }
-            })
-            if #available(iOS 8.2, *) {
-                healthStore?.preferredUnitsForQuantityTypes([HKObjectType.quantityTypeForIdentifier("HKQuantityTypeIdentifierHeartRate")!], completion: { preferredUnits, error in
-                    self.heartRateUnit = preferredUnits[HKObjectType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)!]
-                })
-            } else {
-                // Fallback on earlier versions
-            }
-        }
+        HealthKitInteractor.sharedInstance.initHKData()
     }
     
     func test() {
-        getSamples()
+        HealthKitInteractor.sharedInstance.getSamples()
+        play()
     }
     
-    func getSamples()
-    {
-        let heartrate = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierHeartRate)
-        let sort = [
-            NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        ]
-        let heartRateUnit = HKUnit(fromString: "count/min")
-        let sampleQuery = HKSampleQuery(sampleType: heartrate!, predicate: nil, limit: 1, sortDescriptors: sort, resultsHandler: { [unowned self] (query, results, error) in
-            if let results = results as? [HKQuantitySample]
-            {
-                let sample = results[0] as HKQuantitySample
-                
-                let value = sample.quantity.doubleValueForUnit(heartRateUnit)
-                print (value)
-                let rate = results[0]
-                print(results[0])
-                print(query)
-                self.updateHeartRate(results)
-            }
-            })
-        healthStore?.executeQuery(sampleQuery)
+    func play() {
+        let gameplayScene = CCBReader.load("Gameplay") as! Gameplay
         
+        let scene = CCScene()
+        scene.addChild(gameplayScene)
+        
+        let transition = CCTransition(fadeWithDuration: 0.5)
+        CCDirector.sharedDirector().presentScene(scene, withTransition: transition)
     }
     
-    func updateHeartRate(samples: [HKSample]?)
-    {
-        guard let heartRateSamples = samples as? [HKQuantitySample] else {return}
-        dispatch_async(dispatch_get_main_queue()) {
-            guard let sample = heartRateSamples.first else{return}
-            let value = sample.quantity.doubleValueForUnit(self.heartRateUnit!)
-            print("Heart Rate: " + String(UInt16(value)))
-            let date = sample.startDate
-            let dateFormatter = NSDateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
-            print(dateFormatter.stringFromDate(date))
+    override func update(delta: CCTime) {
+        backgroundNode.position = ccp(backgroundNode.position.x - 50 * CGFloat(delta), backgroundNode.position.y)
+        for ground in backgrounds {
+            let groundWorldPosition = backgroundNode.convertToWorldSpace(ground.position)
+            let groundScreenPosition = convertToNodeSpace(groundWorldPosition)
+            if groundScreenPosition.x <= (-ground.contentSize.width) {
+                ground.position = ccp(ground.position.x + ground.contentSize.width * 2, ground.position.y)
+            }
         }
     }
 }
