@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		551CBF201C5E96E700540C16 /* NSTimer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */; };
+		551CBF241C5EA88A00540C16 /* GameplayDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF231C5EA88A00540C16 /* GameplayDelegates.swift */; };
+		551CBF261C5EA89E00540C16 /* ChocolateBarStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF251C5EA89E00540C16 /* ChocolateBarStore.swift */; };
+		551CBF281C5EA8B300540C16 /* GameplayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF271C5EA8B300540C16 /* GameplayScrollView.swift */; };
+		551CBF2A1C5EA8C400540C16 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF291C5EA8C400540C16 /* Store.swift */; };
+		551CBF2C1C5EA8D800540C16 /* CounterPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF2B1C5EA8D800540C16 /* CounterPopup.swift */; };
 		55B1B89E1C5E441B0080F4F0 /* HealthKitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */; };
 		55B1B8A21C5E48C50080F4F0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */; };
 		55B663CB1C5E538400BCE91C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B663CA1C5E538400BCE91C /* Gameplay.swift */; };
@@ -153,6 +158,11 @@
 
 /* Begin PBXFileReference section */
 		551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTimer+Closure.swift"; path = "Source/NSTimer+Closure.swift"; sourceTree = "<group>"; };
+		551CBF231C5EA88A00540C16 /* GameplayDelegates.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayDelegates.swift; path = Source/GameplayDelegates.swift; sourceTree = "<group>"; };
+		551CBF251C5EA89E00540C16 /* ChocolateBarStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ChocolateBarStore.swift; path = Source/ChocolateBarStore.swift; sourceTree = "<group>"; };
+		551CBF271C5EA8B300540C16 /* GameplayScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayScrollView.swift; path = Source/GameplayScrollView.swift; sourceTree = "<group>"; };
+		551CBF291C5EA8C400540C16 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Source/Store.swift; sourceTree = "<group>"; };
+		551CBF2B1C5EA8D800540C16 /* CounterPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterPopup.swift; sourceTree = "<group>"; };
 		55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitInteractor.swift; path = Source/HealthKitInteractor.swift; sourceTree = "<group>"; };
 		55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		55B1B8A31C5E48C50080F4F0 /* FitFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitFarm.entitlements; sourceTree = "<group>"; };
@@ -447,6 +457,11 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				55B663CA1C5E538400BCE91C /* Gameplay.swift */,
+				551CBF2B1C5EA8D800540C16 /* CounterPopup.swift */,
+				551CBF291C5EA8C400540C16 /* Store.swift */,
+				551CBF271C5EA8B300540C16 /* GameplayScrollView.swift */,
+				551CBF251C5EA89E00540C16 /* ChocolateBarStore.swift */,
+				551CBF231C5EA88A00540C16 /* GameplayDelegates.swift */,
 				551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */,
 				55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
@@ -833,10 +848,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				551CBF201C5E96E700540C16 /* NSTimer+Closure.swift in Sources */,
+				551CBF281C5EA8B300540C16 /* GameplayScrollView.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
+				551CBF241C5EA88A00540C16 /* GameplayDelegates.swift in Sources */,
 				55B1B89E1C5E441B0080F4F0 /* HealthKitInteractor.swift in Sources */,
+				551CBF2A1C5EA8C400540C16 /* Store.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
 				55B663CB1C5E538400BCE91C /* Gameplay.swift in Sources */,
+				551CBF261C5EA89E00540C16 /* ChocolateBarStore.swift in Sources */,
+				551CBF2C1C5EA8D800540C16 /* CounterPopup.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
