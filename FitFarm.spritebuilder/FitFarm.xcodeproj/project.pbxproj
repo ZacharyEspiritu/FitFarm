@@ -13,6 +13,7 @@
 		551CBF281C5EA8B300540C16 /* GameplayScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF271C5EA8B300540C16 /* GameplayScrollView.swift */; };
 		551CBF2A1C5EA8C400540C16 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF291C5EA8C400540C16 /* Store.swift */; };
 		551CBF2C1C5EA8D800540C16 /* CounterPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF2B1C5EA8D800540C16 /* CounterPopup.swift */; };
+		551CBF2E1C5EAAE100540C16 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 551CBF2D1C5EAAE100540C16 /* Images.xcassets */; };
 		55B1B89E1C5E441B0080F4F0 /* HealthKitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */; };
 		55B1B8A21C5E48C50080F4F0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */; };
 		55B663CB1C5E538400BCE91C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B663CA1C5E538400BCE91C /* Gameplay.swift */; };
@@ -163,6 +164,7 @@
 		551CBF271C5EA8B300540C16 /* GameplayScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GameplayScrollView.swift; path = Source/GameplayScrollView.swift; sourceTree = "<group>"; };
 		551CBF291C5EA8C400540C16 /* Store.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Store.swift; path = Source/Store.swift; sourceTree = "<group>"; };
 		551CBF2B1C5EA8D800540C16 /* CounterPopup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterPopup.swift; sourceTree = "<group>"; };
+		551CBF2D1C5EAAE100540C16 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitInteractor.swift; path = Source/HealthKitInteractor.swift; sourceTree = "<group>"; };
 		55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		55B1B8A31C5E48C50080F4F0 /* FitFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitFarm.entitlements; sourceTree = "<group>"; };
@@ -545,6 +547,7 @@
 		B77F1B4617B978D7009739AE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				551CBF2D1C5EAAE100540C16 /* Images.xcassets */,
 				7A40366119DDF8C2007B6E8F /* Platforms */,
 				5B12100D197483EE004C1E1D /* res */,
 				B73789911807667A0076A88C /* Icons */,
@@ -760,6 +763,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B71F5919188484E7003F4D28 /* Settings.png in Resources */,
+				551CBF2E1C5EAAE100540C16 /* Images.xcassets in Resources */,
 				B7378978180762440076A88C /* Default@2x.png in Resources */,
 				B71F5914188484E7003F4D28 /* iPad@2x.png in Resources */,
 				B71F5913188484E7003F4D28 /* iPad.png in Resources */,
@@ -1138,6 +1142,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = FitFarm.entitlements;
@@ -1175,6 +1181,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "Brand Assets";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_ENTITLEMENTS = FitFarm.entitlements;
