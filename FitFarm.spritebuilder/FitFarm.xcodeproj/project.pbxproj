@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		551CBF201C5E96E700540C16 /* NSTimer+Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */; };
 		55B1B89E1C5E441B0080F4F0 /* HealthKitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */; };
 		55B1B8A21C5E48C50080F4F0 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */; };
 		55B663CB1C5E538400BCE91C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B663CA1C5E538400BCE91C /* Gameplay.swift */; };
@@ -151,6 +152,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "NSTimer+Closure.swift"; path = "Source/NSTimer+Closure.swift"; sourceTree = "<group>"; };
 		55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HealthKitInteractor.swift; path = Source/HealthKitInteractor.swift; sourceTree = "<group>"; };
 		55B1B8A11C5E48C50080F4F0 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
 		55B1B8A31C5E48C50080F4F0 /* FitFarm.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = FitFarm.entitlements; sourceTree = "<group>"; };
@@ -445,6 +447,7 @@
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				55B663CA1C5E538400BCE91C /* Gameplay.swift */,
+				551CBF1F1C5E96E700540C16 /* NSTimer+Closure.swift */,
 				55B1B89D1C5E441B0080F4F0 /* HealthKitInteractor.swift */,
 				D352B48019EC608A00829775 /* MetalShaders */,
 			);
@@ -829,6 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				551CBF201C5E96E700540C16 /* NSTimer+Closure.swift in Sources */,
 				B73789871807631A0076A88C /* main.m in Sources */,
 				55B1B89E1C5E441B0080F4F0 /* HealthKitInteractor.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,

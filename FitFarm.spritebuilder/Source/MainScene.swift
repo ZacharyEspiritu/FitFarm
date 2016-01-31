@@ -22,7 +22,6 @@ class MainScene: CCNode {
     }
     
     func test() {
-        HealthKitInteractor.sharedInstance.getSamples()
         play()
     }
     

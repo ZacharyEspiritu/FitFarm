@@ -27,12 +27,21 @@ class Gameplay: CCNode {
     weak var chocolateBarStore: ChocolateBarStore!
     
     weak var counterPopup: CounterPopup!
+    var healthKitInteractor: HealthKitInteractor = HealthKitInteractor()
     
     
     func didLoadFromCCB() {
         store.delegate = self
         chocolateBarStore.delegate = self
+        healthKitInteractor.initHKData()
+        healthKitInteractor.delegate = self
+        healthKitInteractor.getSamples()
+        
 //        OALSimpleAudio.sharedInstance().playBg("")
+        
+        cardioCoinsCount.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins"))"
+        chocolateBarsCount.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("chocolateBarsCount"))"
+        counterPopup.calculateNewVariables()
     }
     
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
@@ -121,10 +130,33 @@ protocol Animal {
     func slaughterAnimal()
 }
 
+
+extension Gameplay: HealthKitInteractorProtocol {
+    func didAccessNewStepData(healthStore: HealthKitInteractor, newSteps: Int) {
+        NSUserDefaults.standardUserDefaults().setInteger(newSteps, forKey: "oldSteps")
+        
+    }
+}
+
 class CounterPopup: CCNode {
+    
+    weak var cardioCoins: CCLabelTTF!
+    weak var steps: CCLabelTTF!
+    weak var newCardioCoins: CCLabelTTF!
     
     func didLoadFromCCB() {
         print("test")
+    }
+    
+    func calculateNewVariables() {
+        HealthKitInteractor.sharedInstance.getSamples()
+        cardioCoins.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins")) cardioCoins"
+        steps.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("oldSteps")) steps"
+        
+        var newCoins = NSUserDefaults.standardUserDefaults().integerForKey("oldSteps") + NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins")
+        
+        newCardioCoins.string = "\(newCoins) cardioCoins"
+        NSUserDefaults.standardUserDefaults().setInteger(newCoins, forKey: "cardioCoins")
     }
 }
 

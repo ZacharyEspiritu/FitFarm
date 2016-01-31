@@ -13,10 +13,10 @@ class HealthKitInteractor {
     let defaults = NSUserDefaults.standardUserDefaults()
     
     static let sharedInstance = HealthKitInteractor()
-    private init() {}
     
     var healthStore: HKHealthStore?
     var heartRateUnit: HKUnit?
+    var delegate: HealthKitInteractorProtocol?
     
     func initHKData() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -74,6 +74,11 @@ class HealthKitInteractor {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd hh:mm:ss"
             print(dateFormatter.stringFromDate(date))
+            self.delegate?.didAccessNewStepData(self, newSteps: Int(UInt16(value)))
         }
     }
+}
+
+protocol HealthKitInteractorProtocol {
+    func didAccessNewStepData(healthStore: HealthKitInteractor, newSteps: Int)
 }
