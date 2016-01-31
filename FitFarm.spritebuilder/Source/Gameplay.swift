@@ -26,9 +26,12 @@ class Gameplay: CCNode {
     weak var store: Store!
     weak var chocolateBarStore: ChocolateBarStore!
     
+    weak var counterPopup: CounterPopup!
+    
     
     func didLoadFromCCB() {
         store.delegate = self
+        chocolateBarStore.delegate = self
 //        OALSimpleAudio.sharedInstance().playBg("")
     }
     
@@ -62,18 +65,23 @@ extension Gameplay: StoreDelegate {
 extension Gameplay: ChocolateBarStoreDelegate {
     func chocoStoreDidClose() {
         grayOut.runAction(CCActionFadeTo(duration: 0.7, opacity: 0))
-        chocolateBarStore.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 0.5, y: 615))))
+        chocolateBarStore.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 284, y: 615))))
     }
 }
 
 class ChocolateBarStore: CCNode {
     var delegate: ChocolateBarStoreDelegate?
     
-    func buyChocolateBar() {
-        
+    func makePurchase() {
+        let error = UIAlertView()
+        error.title = "Confirm Your In-App Purchase"
+        error.message = "Do you want to buy one ChocoBar for $1337.00?"
+        error.addButtonWithTitle("Cancel")
+        error.addButtonWithTitle("Buy")
+        error.show()
     }
     
-    func exit() {
+    func exitShop() {
         delegate?.chocoStoreDidClose()
     }
 }
@@ -111,6 +119,13 @@ protocol Animal {
     func buyAnimal()
     func sellAnimal()
     func slaughterAnimal()
+}
+
+class CounterPopup: CCNode {
+    
+    func didLoadFromCCB() {
+        print("test")
+    }
 }
 
 class Panda: CCSprite, Animal {
