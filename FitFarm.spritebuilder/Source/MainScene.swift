@@ -19,6 +19,8 @@ class MainScene: CCNode {
         backgrounds.append(background2)
         
         HealthKitInteractor.sharedInstance.initHKData()
+        NSUserDefaults.standardUserDefaults().setInteger(17825, forKey: "cardioCoins")
+        NSUserDefaults.standardUserDefaults().setInteger(24, forKey: "chocolateBarsCount")
     }
     
     func test() {

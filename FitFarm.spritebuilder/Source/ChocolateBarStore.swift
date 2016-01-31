@@ -9,7 +9,18 @@
 import Foundation
 
 class ChocolateBarStore: CCNode {
+    
+    weak var coins: CCLabelTTF!
+    weak var choco: CCLabelTTF!
+    
     var delegate: ChocolateBarStoreDelegate?
+    
+    func didLoadFromCCB() {
+        NSTimer.schedule(delay: 2.2) { timer in
+            self.coins.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins"))"
+            self.choco.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("chocolateBarsCount"))"
+        }
+    }
     
     func makePurchase() {
         let error = UIAlertView()
