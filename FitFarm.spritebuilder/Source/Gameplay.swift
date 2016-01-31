@@ -22,20 +22,83 @@ class Gameplay: CCNode {
     
     weak var username: CCLabelTTF!
     
+    weak var grayOut: CCNodeColor!
+    weak var store: Store!
+    weak var chocolateBarStore: ChocolateBarStore!
+    
+    
+    func didLoadFromCCB() {
+        store.delegate = self
+//        OALSimpleAudio.sharedInstance().playBg("")
+    }
+    
     override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
+    }
+    
+    func openMenu() {
+        grayOut.runAction(CCActionFadeTo(duration: 0.7, opacity: 0.7))
+        store.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 0.5, y: 0))))
+    }
+    
+    func buyChocoBars() {
+        grayOut.runAction(CCActionFadeTo(duration: 0.7, opacity: 0.7))
+        chocolateBarStore.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 284, y: 309))))
     }
     
     func getSamples() {
         HealthKitInteractor.sharedInstance.getSamples()
 //        scrollView.addNewPanda()
+        openMenu()
     }
 }
 
-class GameplayScrollView: CCNode {
-    func addNewPanda() {
-        let newPanda = CCBReader.load("Panda") as! Panda
-        self.addChild(newPanda)
+extension Gameplay: StoreDelegate {
+    func didClose() {
+        grayOut.runAction(CCActionFadeTo(duration: 0.7, opacity: 0))
+        store.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 0.5, y: -300))))
     }
+}
+
+extension Gameplay: ChocolateBarStoreDelegate {
+    func chocoStoreDidClose() {
+        grayOut.runAction(CCActionFadeTo(duration: 0.7, opacity: 0))
+        chocolateBarStore.runAction(CCActionEaseSineIn(action: CCActionMoveTo(duration: 0.7, position: CGPoint(x: 0.5, y: 615))))
+    }
+}
+
+class ChocolateBarStore: CCNode {
+    var delegate: ChocolateBarStoreDelegate?
+    
+    func buyChocolateBar() {
+        
+    }
+    
+    func exit() {
+        delegate?.chocoStoreDidClose()
+    }
+}
+
+protocol ChocolateBarStoreDelegate {
+    func chocoStoreDidClose()
+}
+
+class GameplayScrollView: CCNode {
+    func panda() {
+        
+    }
+}
+
+class Store: CCNode {
+    
+    var delegate: StoreDelegate?
+    
+    func exit() {
+        delegate?.didClose()
+    }
+}
+
+protocol StoreDelegate {
+    func didClose()
 }
 
 protocol Animal {
