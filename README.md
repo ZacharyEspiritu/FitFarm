@@ -22,6 +22,8 @@ We figured out how to use HealthKit and why not to ever use HealthKit again. We 
 ## What's next for FitFarm
 We're looking to add a feature where you can visit other people's farms and leave notes of encouragement, and then possibly introducing new forms of currency based off of the HealthKit features, such as heart rate or calories burned.
 
+---
+
 **Devpost Link:** http://devpost.com/software/fitfarm-3f7wxu
 
 Created in under 8 hours by Nicholas Cimaszewski, Zachary Espiritu, and Vincent McAuliffe.
