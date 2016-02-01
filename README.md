@@ -1,5 +1,5 @@
 # FitFarm
-A hackathon project built at hackTrin III by Nicholas Cimaszewski, Zachary Espiritu, and Vincent McAuliffe. A fitness-based farm management simulator where players raise their own farm through real-world physical exercise.
+**3rd place** at hackTrin III by Nicholas Cimaszewski, Zachary Espiritu, and Vincent McAuliffe. A fitness-based farm management simulator where players raise their own farm through real-world physical exercise.
 
 ## Inspiration
 We hate working out and we hate Farmville. Let's find out if two wrongs make a right!
