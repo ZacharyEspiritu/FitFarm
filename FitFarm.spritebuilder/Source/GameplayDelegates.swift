@@ -3,7 +3,7 @@
 //  FitFarm
 //
 //  Created by Zachary Espiritu on 1/31/16.
-//  Copyright © 2016 Apportable. All rights reserved.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import Foundation
@@ -50,6 +50,5 @@ extension Gameplay: ChocolateBarStoreDelegate {
 extension Gameplay: HealthKitInteractorProtocol {
     func didAccessNewStepData(healthStore: HealthKitInteractor, newSteps: Int) {
         NSUserDefaults.standardUserDefaults().setInteger(newSteps, forKey: "oldSteps")
-        
     }
 }

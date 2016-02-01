@@ -1,9 +1,9 @@
 //
-//  ProfileViewController.swift
-//  HealthKit~Swift
+//  HealthKitInteractor.swift
+//  FitFarm
 //
-//  Created by EdenLi on 2014/9/17.
-//  Copyright (c) 2014年 Darktt Personal Company. All rights reserved.
+//  Created by Zachary Espiritu on 1/31/16.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import HealthKit
@@ -17,6 +17,7 @@ class HealthKitInteractor {
     var healthStore: HKHealthStore?
     var heartRateUnit: HKUnit?
     var delegate: HealthKitInteractorProtocol?
+    
     
     func initHKData() {
         if HKHealthStore.isHealthDataAvailable() {
@@ -39,17 +40,12 @@ class HealthKitInteractor {
         }
     }
     
-    func getSamples()
-    {
+    func getSamples() {
         let stepCount = HKQuantityType.quantityTypeForIdentifier(HKQuantityTypeIdentifierStepCount)
-        let sort = [
-            NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)
-        ]
+        let sort = [NSSortDescriptor(key: HKSampleSortIdentifierStartDate, ascending: false)]
         let sampleQuery = HKSampleQuery(sampleType: stepCount!, predicate: nil, limit: 1, sortDescriptors: sort, resultsHandler: { [unowned self] (query, results, error) in
-            if let results = results as? [HKQuantitySample]
-            {
+            if let results = results as? [HKQuantitySample] {
                 let sample = results[0] as HKQuantitySample
-                
                 let value = sample.quantity.doubleValueForUnit(self.heartRateUnit!)
                 print (value)
                 let rate = results[0]
@@ -57,13 +53,11 @@ class HealthKitInteractor {
                 print(query)
                 self.updateCalorieCount(results)
             }
-            })
+        })
         healthStore?.executeQuery(sampleQuery)
-        
     }
     
-    func updateCalorieCount(samples: [HKSample]?)
-    {
+    func updateCalorieCount(samples: [HKSample]?) {
         guard let heartRateSamples = samples as? [HKQuantitySample] else {return}
         dispatch_async(dispatch_get_main_queue()) {
             guard let sample = heartRateSamples.first else{return}

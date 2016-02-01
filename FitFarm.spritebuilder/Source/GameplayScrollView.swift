@@ -3,7 +3,7 @@
 //  FitFarm
 //
 //  Created by Zachary Espiritu on 1/31/16.
-//  Copyright © 2016 Apportable. All rights reserved.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import Foundation
@@ -26,59 +26,6 @@ class GameplayScrollView: CCNode {
     weak var wheat4: CCSprite!
     weak var wheat5: CCSprite!
     
-    func buyWheat() {
-        if NSUserDefaults.standardUserDefaults().boolForKey("wheat4") {
-            wheat5.visible = true
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat3") {
-            wheat4.visible = true
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat2") {
-            wheat3.visible = true
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat1") {
-            wheat2.visible = true
-        }
-        else {
-            wheat1.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "wheat1")
-        }
-    }
-    
-    func buyCorn() {
-        if NSUserDefaults.standardUserDefaults().boolForKey("corn5") {
-            corn6.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn6")
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("corn4") {
-            corn5.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn5")
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("corn3") {
-            corn4.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn4")
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("corn2") {
-            corn3.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn3")
-        }
-        else if NSUserDefaults.standardUserDefaults().boolForKey("corn1") {
-            corn2.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn2")
-        }
-        else {
-            corn1.visible = true
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn1")
-        }
-    }
-    
-    func buyPanda() {
-        
-    }
-    
-    func buyRabbit() {
-        
-    }
     
     func didLoadFromCCB() {
         panda.visible = false
@@ -148,5 +95,59 @@ class GameplayScrollView: CCNode {
         if corn6Bool {
             corn6.visible = true
         }
+    }
+    
+    func buyWheat() {
+        if NSUserDefaults.standardUserDefaults().boolForKey("wheat4") {
+            wheat5.visible = true
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat3") {
+            wheat4.visible = true
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat2") {
+            wheat3.visible = true
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("wheat1") {
+            wheat2.visible = true
+        }
+        else {
+            wheat1.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "wheat1")
+        }
+    }
+    
+    func buyCorn() {
+        if NSUserDefaults.standardUserDefaults().boolForKey("corn5") {
+            corn6.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn6")
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("corn4") {
+            corn5.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn5")
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("corn3") {
+            corn4.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn4")
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("corn2") {
+            corn3.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn3")
+        }
+        else if NSUserDefaults.standardUserDefaults().boolForKey("corn1") {
+            corn2.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn2")
+        }
+        else {
+            corn1.visible = true
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "corn1")
+        }
+    }
+    
+    func buyPanda() {
+        
+    }
+    
+    func buyRabbit() {
+        
     }
 }

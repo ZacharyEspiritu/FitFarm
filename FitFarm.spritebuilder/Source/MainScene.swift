@@ -1,3 +1,11 @@
+//
+//  MainScene.swift
+//  FitFarm
+//
+//  Created by Zachary Espiritu on 1/31/16.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
+//
+
 import Foundation
 import HealthKit
 

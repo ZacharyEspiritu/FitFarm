@@ -3,7 +3,7 @@
 //  FitFarm
 //
 //  Created by Zachary Espiritu on 1/31/16.
-//  Copyright © 2016 Apportable. All rights reserved.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import Foundation
@@ -15,6 +15,7 @@ class CounterPopup: CCNode {
     weak var newCardioCoins: CCLabelTTF!
     
     var delegate: CounterPopupDelegate?
+    
     
     func didLoadFromCCB() {
         cardioCoins.string = ""
@@ -40,7 +41,6 @@ class CounterPopup: CCNode {
             NSUserDefaults.standardUserDefaults().setInteger(NSUserDefaults.standardUserDefaults().integerForKey("oldSteps"), forKey: "reallyOldSteps")
             
             let newCoins = newSteps + NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins")
-            
             self.newCardioCoins.string = "\(newCoins) cardioCoins"
             NSUserDefaults.standardUserDefaults().setInteger(newCoins, forKey: "cardioCoins")
         }

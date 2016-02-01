@@ -3,7 +3,7 @@
 //  FitFarm
 //
 //  Created by Zachary Espiritu on 1/31/16.
-//  Copyright © 2016 Apportable. All rights reserved.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import Foundation
@@ -35,16 +35,17 @@ class Gameplay: CCNode {
     func didLoadFromCCB() {
         store.delegate = self
         chocolateBarStore.delegate = self
-        healthKitInteractor.initHKData()
-        healthKitInteractor.delegate = self
-        healthKitInteractor.getSamples()
         
-//        OALSimpleAudio.sharedInstance().playBg("")
+        healthKitInteractor.initHKData()
+        healthKitInteractor.getSamples()
+        healthKitInteractor.delegate = self
+        
+        counterPopup.calculateNewVariables()
+        openCounter()
         
         cardioCoinsCount.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins"))"
         chocolateBarsCount.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("chocolateBarsCount")) [+]"
-        counterPopup.calculateNewVariables()
-        openCounter()
+        
         self.userInteractionEnabled = true
     }
     
@@ -73,7 +74,6 @@ class Gameplay: CCNode {
     
     func getSamples() {
         HealthKitInteractor.sharedInstance.getSamples()
-//        scrollView.addNewPanda()
         openMenu()
     }
 }

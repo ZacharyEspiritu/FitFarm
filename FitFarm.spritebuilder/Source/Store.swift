@@ -3,7 +3,7 @@
 //  FitFarm
 //
 //  Created by Zachary Espiritu on 1/31/16.
-//  Copyright © 2016 Apportable. All rights reserved.
+//  Copyright © 2016 Zachary Espiritu. All rights reserved.
 //
 
 import Foundation
@@ -13,14 +13,15 @@ class Store: CCNode {
     var coins: CCLabelTTF!
     var choco: CCLabelTTF!
     
+    var delegate: StoreDelegate?
+    
+    
     func didLoadFromCCB() {
         NSTimer.schedule(delay: 2.2) { timer in
             self.coins.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("cardioCoins"))"
             self.choco.string = "\(NSUserDefaults.standardUserDefaults().integerForKey("chocolateBarsCount"))"
         }
     }
-    
-    var delegate: StoreDelegate?
     
     func exit() {
         delegate?.didClose()
