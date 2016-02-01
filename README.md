@@ -1,5 +1,5 @@
 # FitFarm
-**3rd place** at hackTrin III by Nicholas Cimaszewski, Zachary Espiritu, and Vincent McAuliffe. A fitness-based farm management simulator where players raise their own farm through real-world physical exercise.
+**3rd Place at hackTrin III**. A fitness-based farm management simulator where players raise their own farm through real-world physical exercise.
 
 ## Inspiration
 We hate working out and we hate Farmville. Let's find out if two wrongs make a right!
@@ -23,3 +23,5 @@ We figured out how to use HealthKit and why not to ever use HealthKit again. We 
 We're looking to add a feature where you can visit other people's farms and leave notes of encouragement, and then possibly introducing new forms of currency based off of the HealthKit features, such as heart rate or calories burned.
 
 **Devpost Link:** http://devpost.com/software/fitfarm-3f7wxu
+
+Created in under 8 hours by Nicholas Cimaszewski, Zachary Espiritu, and Vincent McAuliffe.
