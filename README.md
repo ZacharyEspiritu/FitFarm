@@ -1,5 +1,6 @@
-# FitFarm
-**3rd Place at hackTrin III**. A fitness-based farm management simulator where players raise their own farm through real-world physical exercise.
+![FitFarm: A Fitness-Based Farm Management Simulator](https://raw.githubusercontent.com/ZacharyEspiritu/FitFarm/master/FitFarm.spritebuilder/Packages/SpriteBuilder%20Resources.sbpack/assets/resources-auto/logo.png)
+
+A fitness-based farm management simulator where players raise their own farm through real-world physical exercise. **Won 3rd Place at hackTrin III**. 
 
 ## Inspiration
 We hate working out and we hate Farmville. Let's find out if two wrongs make a right!
